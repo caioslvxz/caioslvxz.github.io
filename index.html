@@ -3,11 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caio Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Caio Motors - Venda de Carros</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        header {
+            background-color: #212529;
+            color: #fff;
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .carro {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            overflow: hidden;
+            transition: transform 0.2s ease;
+        }
+
+        .carro:hover {
+            transform: translateY(-4px);
+        }
+
+        .carro img {
+            width: 100%;
+            max-width: 300px;
+            object-fit: cover;
+            border-right: 1px solid #eee;
+        }
+
+        .carro-info {
+            flex: 1;
+            padding: 1.5rem;
+        }
+
+        .carro-info h2 {
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+            color: #212529;
+        }
+
+        .carro-info p {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .botao-comprar {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .botao-comprar:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .carro {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .carro img {
+                border-right: none;
+                border-bottom: 1px solid #eee;
+            }
+
+            .carro-info {
+                text-align: center;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Caio Portfolio</h1>
-    <p>Confira alguns carros disponíveis para venda:</p>
+
+<header>
+    <h1>Caio Motors</h1>
+    <p>Seu novo carro está aqui!</p>
+</header>
+
+<div class="container">
+    <div class="carro">
+        <img src="https://via.placeholder.com/300x200?text=Honda+Civic+2020" alt="Honda Civic 2020">
+        <div class="carro-info">
+            <h2>Honda Civic 2020</h2>
+            <p>R$ 89.900 - 45.000 km - Automático</p>
+            <a href="#" class="botao-comprar">Comprar</a>
+        </div>
+    </div>
+
+    <div class="carro">
+        <img src="https://via.placeholder.com/300x200?text=VW+T-Cross+2022" alt="Volkswagen T-Cross 2022">
+        <div class="carro-info">
+            <h2>Volkswagen T-Cross 2022</h2>
+            <p>R$ 112.000 - 20.000 km - Automático</p>
+            <a href="#" class="botao-comprar">Comprar</a>
+        </div>
+    </div>
+
+    <div class="carro">
+        <img src="https://via.placeholder.com/300x200?text=Chevrolet+Onix+2021" alt="Chevrolet Onix 2021">
+        <div class="carro-info">
+            <h2>Chevrolet Onix 2021</h2>
+            <p>R$ 74.500 - 35.000 km - Manual</p>
+            <a href="#" class="botao-comprar">Comprar</a>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
