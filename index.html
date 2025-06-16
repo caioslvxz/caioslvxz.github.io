@@ -1,153 +1,203 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caio Motors - Venda de Carros</title>
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caio Emanuel | Portfólio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cor-principal: #e91e63; /* Rosa */
+      --cor-fundo: #121212;
+      --cor-texto: #ffffff;
+      --cor-neon-secundaria: #ff00ff; /* Roxo neon */
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8f9fa;
-            color: #333;
-        }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-        header {
-            background-color: #212529;
-            color: #fff;
-            padding: 2rem 1rem;
-            text-align: center;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+    }
 
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-        }
+    header {
+      background-color: #1e1e1e;
+      padding: 1.5rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 0 20px var(--cor-principal);
+      border-bottom: 2px solid var(--cor-principal);
+    }
 
-        header p {
-            font-size: 1.2rem;
-            color: #ccc;
-        }
+    header h1 {
+      color: var(--cor-principal);
+      /* sem neon no rosa */
+      font-size: 1.8rem;
+    }
 
-        .container {
-            max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
+    nav a {
+      color: var(--cor-neon-secundaria);
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      text-shadow: 0 0 6px var(--cor-neon-secundaria);
+      transition: 0.3s ease;
+    }
 
-        .carro {
-            background-color: #fff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            display: flex;
-            flex-wrap: wrap;
-            margin-bottom: 2rem;
-            overflow: hidden;
-            transition: transform 0.2s ease;
-        }
+    nav a:hover {
+      color: var(--cor-principal);
+      /* neon só no roxo */
+      text-shadow: 0 0 10px var(--cor-principal);
+    }
 
-        .carro:hover {
-            transform: translateY(-4px);
-        }
+    section {
+      padding: 4rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-        .carro img {
-            width: 100%;
-            max-width: 300px;
-            object-fit: cover;
-            border-right: 1px solid #eee;
-        }
+    h2 {
+      color: var(--cor-principal);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid var(--cor-neon-secundaria);
+      padding-bottom: 0.5rem;
+      width: fit-content;
+      /* sem neon no rosa */
+    }
 
-        .carro-info {
-            flex: 1;
-            padding: 1.5rem;
-        }
+    p, li {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
 
-        .carro-info h2 {
-            margin-bottom: 0.5rem;
-            font-size: 1.6rem;
-            color: #212529;
-        }
+    .projetos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
 
-        .carro-info p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-            color: #555;
-        }
+    .card {
+      background-color: #1c1c1c;
+      padding: 1.5rem;
+      border-radius: 15px;
+      border: 1px solid var(--cor-neon-secundaria);
+      box-shadow: 0 0 12px var(--cor-neon-secundaria);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .botao-comprar {
-            display: inline-block;
-            background-color: #28a745;
-            color: white;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+    .card h3 {
+      margin-bottom: 0.5rem;
+      color: var(--cor-principal);
+      /* sem neon */
+    }
 
-        .botao-comprar:hover {
-            background-color: #218838;
-        }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 25px var(--cor-principal);
+    }
 
-        @media (max-width: 768px) {
-            .carro {
-                flex-direction: column;
-                align-items: center;
-            }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-top: 1rem;
+    }
 
-            .carro img {
-                border-right: none;
-                border-bottom: 1px solid #eee;
-            }
+    ul li {
+      margin: 0.75rem 0;
+      position: relative;
+      padding-left: 1.5rem;
+    }
 
-            .carro-info {
-                text-align: center;
-            }
-        }
-    </style>
+    ul li::before {
+      content: "⮞";
+      color: var(--cor-principal);
+      position: absolute;
+      left: 0;
+    }
+
+    footer {
+      background: #0d0d0d;
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 3rem;
+      font-size: 0.95rem;
+      color: var(--cor-principal);
+      /* sem neon no rosa */
+      border-top: 1px solid #333;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav {
+        margin-top: 1rem;
+      }
+
+      nav a {
+        margin-left: 0;
+        margin-right: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-<header>
-    <h1>Caio Motors</h1>
-    <p>Seu novo carro está aqui!</p>
-</header>
+  <header>
+    <h1>Caio Emanuel</h1>
+    <nav>
+      <a href="#sobre">Sobre</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
 
-<div class="container">
-    <div class="carro">
-        <img src="https://via.placeholder.com/300x200?text=Honda+Civic+2020" alt="Honda Civic 2020">
-        <div class="carro-info">
-            <h2>Honda Civic 2020</h2>
-            <p>R$ 89.900 - 45.000 km - Automático</p>
-            <a href="#" class="botao-comprar">Comprar</a>
-        </div>
-    </div>
+  <section id="sobre">
+    <h2>Sobre Mim</h2>
+    <p>Olá! Eu sou um desenvolvedor apaixonado por tecnologia e criação de soluções. Tenho experiência com <strong>HTML</strong>, <strong>CSS</strong>, <strong>JavaScript</strong> e <strong>Python</strong>, e estou sempre aprendendo novas linguagens de programação para construir projetos criativos e funcionais.</p>
+  </section>
 
-    <div class="carro">
-        <img src="https://via.placeholder.com/300x200?text=VW+T-Cross+2022" alt="Volkswagen T-Cross 2022">
-        <div class="carro-info">
-            <h2>Volkswagen T-Cross 2022</h2>
-            <p>R$ 112.000 - 20.000 km - Automático</p>
-            <a href="#" class="botao-comprar">Comprar</a>
-        </div>
+  <section id="projetos">
+    <h2>Projetos</h2>
+    <div class="projetos">
+      <div class="card">
+        <h3>Portfólio Pessoal</h3>
+        <p>Desenvolvido com HTML, CSS e JavaScript. Um site para apresentar meus projetos e informações profissionais.</p>
+      </div>
+      <div class="card">
+        <h3>Sistema de Tarefas</h3>
+        <p>Aplicação simples para gerenciamento de tarefas utilizando Python e SQLite.</p>
+      </div>
+      <div class="card">
+        <h3>Landing Page Responsiva</h3>
+        <p>Layout moderno e adaptável para qualquer dispositivo, com animações e formulário de contato funcional.</p>
+      </div>
     </div>
+  </section>
 
-    <div class="carro">
-        <img src="https://via.placeholder.com/300x200?text=Chevrolet+Onix+2021" alt="Chevrolet Onix 2021">
-        <div class="carro-info">
-            <h2>Chevrolet Onix 2021</h2>
-            <p>R$ 74.500 - 35.000 km - Manual</p>
-            <a href="#" class="botao-comprar">Comprar</a>
-        </div>
-    </div>
-</div>
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Você pode me encontrar nas seguintes plataformas:</p>
+    <ul>
+      <li>Email: caioemanuel@example.com</li>
+      <li>LinkedIn: <a href="https://linkedin.com/in/seuperfil" target="_blank">linkedin.com/in/seuperfil</a></li>
+      <li>GitHub: <a href="https://github.com/seuperfil" target="_blank">github.com/seuperfil</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Caio Emanuel. Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
